@@ -9,6 +9,7 @@ import HomeAdmin from "./components/HomeAdmin";
 import Projects from "./components/Projects";
 import Question from "./components/Question";
 import Profile from "./components/Profile";
+import Contributors from "./components/Contributors";
 
 const router = createBrowserRouter([
   {
@@ -24,8 +25,8 @@ const router = createBrowserRouter([
     element: <HomeUser />,
   },
   {
-    path: "home-admin/projects",
-    element: <Projects />,
+    path: "home-admin/contributors",
+    element: <Contributors />,
   },
   {
     path: "home-user/projects",
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
   },
   {
     path: "home-admin/profile",
+    element: <Profile />,
+  },
+  {
+    path: "home-admin/contributors/profile",
     element: <Profile />,
   },
   {

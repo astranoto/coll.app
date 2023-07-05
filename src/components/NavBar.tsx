@@ -1,5 +1,15 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function NavBar() {
+  const navigate = useNavigate();
+
+  function openProfile() {
+    const a = localStorage.getItem("loggedAccount");
+    if (a) {
+      localStorage.setItem("searchedAccount", a);
+      navigate("./profile");
+    }
+  }
+
   return (
     <div className="bg-black grid grid-cols-3 w-screen">
       <button className="justify-self-start">
@@ -19,14 +29,14 @@ function NavBar() {
         ></img>
       </button>
       <div className="justify-self-end">
-        <Link to="Profile">
+        <button onClick={openProfile}>
           <img
             src="/foto/icona-user.png"
             height="30"
             width="30"
             className="col-span-1 "
           ></img>
-        </Link>
+        </button>
       </div>
     </div>
   );

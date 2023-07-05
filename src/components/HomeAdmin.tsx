@@ -26,7 +26,7 @@ function HomeAdmin() {
             </p>
           </div>
           <div className="row-span-1 justify-self-end p-5">
-            <Link to="projects">
+            <Link to="contributors">
               <img src="./foto/icona-freccia.png" className="h-20 w-20"></img>
             </Link>
           </div>

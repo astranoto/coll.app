@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 function Profile() {
   const navigate = useNavigate();
-  const a = localStorage.getItem("AccountInfo");
+  const a = localStorage.getItem("searchedAccount");
   const info = a ? JSON.parse(a) : null;
   function goBack() {
     window.history.back();
