@@ -9,9 +9,10 @@ function Question() {
       <button onClick={goBack}>
         <img src="/foto/icona-back-nero.png" className="h-10 w-10"></img>
       </button>
-      <p className="font-bold text-xl text-center lg:text-4xl">
-        Hai qualche domanda?
-      </p>
+      <input
+        placeholder="Hai qualche domanda?"
+        className="font-bold text-xl text-center lg:text-4xl"
+      ></input>
       <p className="text-center lg:text-4xl">
         Scrivici pure tutto ciò che ti passa per l'universo
       </p>

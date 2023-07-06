@@ -1,8 +1,1 @@
-[
-    {"name":"Admin", "mail":"admin@gmail.com", "password":"admin123", "role": "admin"},
-    {"name":"Matteo", "mail":"matteo@gmail.com", "password":"matteo123", "role": "user"},
-    {"name":"Matteo", "mail":"matteo@gmail.com", "password":"matteo123", "role": "user"},
-    {"name":"Matteo", "mail":"matteo@gmail.com", "password":"matteo123", "role": "user"},
-    {"name":"Matteo", "mail":"matteo@gmail.com", "password":"matteo123", "role": "user"},
-    {"name":"Matteo", "mail":"matteo@gmail.com", "password":"matteo123", "role": "user"}
-]
+[{"id":0,"name":"Admin","mail":"admin@gmail.com","password":"admin123","role":"admin"},{"id":3,"name":"Matteo Battistini","mail":"matteo@gmail.com","password":"matteo123","role":"user"},{"id":4,"name":"pippo","mail":"pippo@gmail.com","password":"pippo123","role":"user"},{"id":5,"name":"Luca","mail":"luca@gmail.com","password":"luca123","role":"admin"}]

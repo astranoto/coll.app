@@ -16,7 +16,7 @@ function Contributors() {
         <p className="text-2xl font-bold text-center my-10 lg:text-4xl">
           Eccoti, tutti i collaboratori
         </p>
-        <div className="mx-24 grid grid-cols-1 gap-12 place-items-center xl:grid-cols-3">
+        <div className="mx-24 grid grid-cols-1 gap-12 place-items-center lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
           {users.map((user) => {
             if (
               JSON.stringify(user) !== localStorage.getItem("loggedAccount")

@@ -11,7 +11,7 @@ declare global {
 function SignIn() {
   const [inputValue, setInputValue] = useState("");
   const [classValue, setClassValue] = useState(
-    "rounded-lg h-12 w-2/3 lg:h-24 lg:text-2xl lg:mx-12 xl:mx-24"
+    "rounded-lg h-12 w-2/3 p-3 lg:h-24 lg:text-2xl lg:mx-12 xl:mx-24"
   );
   function findUserByEmailAndPassword(mail: string, password: string) {
     const user = users.find(function (user) {
@@ -55,20 +55,6 @@ function SignIn() {
     }
   }
   async function handleClick() {
-    // const newHandle = await window.showSaveFilePicker();
-
-    // // create a FileSystemWritableFileStream to write to
-    // const writableStream = await newHandle.createWritable();
-
-    // const a = {
-    //   name: "Matteo",
-    // };
-
-    // // write our file
-    // await writableStream.write(new Blob([JSON.stringify(a)]));
-
-    // // close the file and write the contents to disk.
-    // await writableStream.close();
     navigate(checkAccount());
   }
 

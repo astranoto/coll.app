@@ -37,14 +37,14 @@ function HomeAdmin() {
           </div>
           <div className="row-span-1">
             <p className="px-10 pt-5 font-bold text-lg lg:text-5xl">
-              Hai una domanda?
+              Aggiungere un collaboratore?
             </p>
             <p className="px-8 font-semibold lg:text-3xl lg:mt-7">
-              Se hai dei dubbi, scriviceli pure in questa sezione
+              Qui puoi aggiungere nuovi collaboratori
             </p>
           </div>
           <div className="row-span-1 justify-self-end p-5">
-            <Link to="question">
+            <Link to="add-user">
               <img src="./foto/icona-freccia.png" className="h-20 w-20"></img>
             </Link>
           </div>

@@ -1,14 +1,54 @@
 import { useNavigate } from "react-router-dom";
+import users from "../users.json";
 function Profile() {
   const navigate = useNavigate();
   const a = localStorage.getItem("searchedAccount");
-  const info = a ? JSON.parse(a) : null;
+  const info: User = a ? JSON.parse(a) : null;
   function goBack() {
     window.history.back();
+  }
+  async function writeUsers(newUsers: Array<User>) {
+    const newHandle = await window.showSaveFilePicker();
+    // create a FileSystemWritableFileStream to write to
+    const writableStream = await newHandle.createWritable();
+    // write our file
+    await writableStream.write(new Blob([JSON.stringify(newUsers)]));
+    // close the file and write the contents to disk.
+    await writableStream.close();
   }
   function changeAccount() {
     localStorage.clear();
     navigate("/");
+  }
+  function deleteProfile() {
+    let a: Array<User> = [];
+    a = users.filter((user) => user.id !== info.id);
+    writeUsers(a);
+    goBack();
+  }
+  function buttonVisible() {
+    if (
+      localStorage.getItem("searchedAccount") ==
+      localStorage.getItem("loggedAccount")
+    ) {
+      return (
+        <button
+          className="mx-11 mb-5 px-10 py-5 bg-black hover:bg-slate-800 text-white font-bold text-3xl rounded-lg lg:text-5xl"
+          onClick={changeAccount}
+        >
+          Esci
+        </button>
+      );
+    } else {
+      return (
+        <button
+          className="mx-11 mb-5 px-10 py-5 bg-black hover:bg-slate-800 text-white font-bold text-3xl rounded-lg lg:text-5xl"
+          onClick={deleteProfile}
+        >
+          Cancella profilo
+        </button>
+      );
+    }
   }
   return (
     <div className="h-screen w-screen lg:grid lg:grid-cols-2">
@@ -46,14 +86,11 @@ function Profile() {
           <b>Password:</b> <br></br>
           {info.password}
         </p>
-        <div className="flex justify-center">
-          <button
-            className="mx-11 mb-5 px-10 py-5 bg-black hover:bg-slate-800 text-white font-bold text-3xl rounded-lg lg:text-5xl"
-            onClick={changeAccount}
-          >
-            Esci
-          </button>
-        </div>
+        <p className="py-10 px-5 text-justify text-2xl lg:text-5xl">
+          <b>Ruolo:</b> <br></br>
+          {info.role}
+        </p>
+        <div className="flex justify-center">{buttonVisible()};</div>
       </div>
     </div>
   );
