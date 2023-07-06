@@ -5,7 +5,7 @@ import users from "../users.json";
 function AddUser() {
   const [inputValue, setInputValue] = useState("");
   const [classValue, setClassValue] = useState(
-    "rounded-lg h-12 w-2/3 m-12 p-3 lg:h-24 lg:text-2xl lg:mx-12 xl:mx-24"
+    "rounded-lg h-12 w-2/3 place-self-center p-3 lg:h-24 lg:text-2xl lg:mx-12 xl:mx-24 row-span-1 col-span-2 xl:col-span-1"
   );
   function goBack() {
     window.history.back();
@@ -64,42 +64,44 @@ function AddUser() {
     <div>
       <NavBar />
       <button onClick={goBack}>
-        <img src="/foto/icona-back-nero.png" className="h-10 w-10"></img>
+        <img src="/foto/icona-back-nero.png" className="h-10 w-10 m-5"></img>
       </button>
       <h1 className="text-center font-bold text-4xl xl:text-6xl">
         Chi è il nuovo collaboratore?
       </h1>
-      <div className="bg-[#f5f5f5] m-24 rounded-xl grid grid-cols-2">
-        <input
-          id="name"
-          placeholder="Name"
-          defaultValue={inputValue}
-          className={classValue}
-        ></input>
-        <input
-          id="mail"
-          placeholder="Mail"
-          defaultValue={inputValue}
-          className={classValue}
-        ></input>
-        <input
-          id="password"
-          placeholder="Password"
-          defaultValue={inputValue}
-          className={classValue}
-        ></input>
-        <input
-          id="role"
-          placeholder="Role"
-          defaultValue={inputValue}
-          className={classValue}
-        ></input>
-        <button
-          onClick={addUser}
-          className="bg-black m-12 p-6 col-span-2 rounded-lg text-white text-4xl font-bold"
-        >
-          Aggiungi
-        </button>
+      <div className="h-screen">
+        <div className="bg-[#f5f5f5] m-24 h-3/5 rounded-xl grid grid-cols-1 grid-rows-5  xl:grid-rows-3 xl:grid-cols-2">
+          <input
+            id="name"
+            placeholder="Name"
+            defaultValue={inputValue}
+            className={classValue}
+          ></input>
+          <input
+            id="mail"
+            placeholder="Mail"
+            defaultValue={inputValue}
+            className={classValue}
+          ></input>
+          <input
+            id="password"
+            placeholder="Password"
+            defaultValue={inputValue}
+            className={classValue}
+          ></input>
+          <input
+            id="role"
+            placeholder="Role"
+            defaultValue={inputValue}
+            className={classValue}
+          ></input>
+          <button
+            onClick={addUser}
+            className="bg-black m-12 p-6 px-12 col-span-2 rounded-lg text-white text-xl place-self-center xl:text-6xl font-bold"
+          >
+            Aggiungi
+          </button>
+        </div>
       </div>
     </div>
   );

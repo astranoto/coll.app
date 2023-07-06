@@ -8,7 +8,7 @@ function Projects() {
     <div className="h-screen w-screen place-items-center">
       <NavBar />
       <button onClick={goBack} className="place-items-start items-start">
-        <img src="/foto/icona-back-nero.png" className="h-10 w-10"></img>
+        <img src="/foto/icona-back-nero.png" className="h-10 w-10 m-5"></img>
       </button>
       <div className="h-5/6">
         <p className="text-2xl font-bold text-center my-10 lg:text-4xl">

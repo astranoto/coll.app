@@ -54,7 +54,10 @@ function Profile() {
     <div className="h-screen w-screen lg:grid lg:grid-cols-2">
       <div className="lg:col-span-1">
         <div className="grid grid-cols-2">
-          <button onClick={goBack} className="col-span-1 justify-self-start">
+          <button
+            onClick={goBack}
+            className="col-span-1 justify-self-start m-5"
+          >
             <img
               src="/foto/icona-back-nero.png"
               className="h-10 w-10 m-10"
