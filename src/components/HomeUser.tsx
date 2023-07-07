@@ -13,9 +13,12 @@ function HomeUser() {
         Qui troverai tutto quello che ti serve
       </p>
       <div className="lg:grid lg:grid-cols-2 h-2/3">
-        <div className="bg-[#f5f5f5] mt-24 mb-16 mx-16 hover:mx-8 grid grid-row-3 rounded-lg h-auto lg:col-span-1 lg:my-10 lg:hover:my-5">
+        <div className="bg-[#f5f5f5] my-8 mx-16 hover:mx-8 grid grid-row-3 rounded-lg lg:h-full lg:col-span-1 lg:my-10 lg:hover:my-5">
           <div className="row-span-1 p-5">
-            <img src="./foto/icona-progetti.png" height="80" width="80"></img>
+            <img
+              src="./foto/icona-progetti.png"
+              className="h-14 w-14 lg:h-24 lg:w-24"
+            ></img>
           </div>
           <div className="row-span-1">
             <p className="px-10 font-bold text-lg lg:text-5xl">
@@ -27,13 +30,19 @@ function HomeUser() {
           </div>
           <div className="row-span-1 justify-self-end p-5">
             <Link to="projects">
-              <img src="./foto/icona-freccia.png" className="h-20 w-20"></img>
+              <img
+                src="./foto/icona-freccia.png"
+                className="h-14 w-14 lg:h-24 lg:w-24"
+              ></img>
             </Link>
           </div>
         </div>
-        <div className="bg-[#f5f5f5] mx-16 hover:mx-8 grid grid-row-3 rounded-lg h-auto lg:col-span-1 lg:my-10 lg:hover:my-5">
+        <div className="bg-[#f5f5f5] my-8 mx-16 hover:mx-8 grid grid-row-3 rounded-lg lg:h-full lg:col-span-1 lg:my-10 lg:hover:my-5">
           <div className="row-span-1 p-2">
-            <img src="./foto/icona-domanda.png" height="80" width="80"></img>
+            <img
+              src="./foto/icona-domanda.png"
+              className="h-14 w-14 lg:h-24 lg:w-24"
+            ></img>
           </div>
           <div className="row-span-1">
             <p className="px-10 pt-5 font-bold text-lg lg:text-5xl">
@@ -45,7 +54,10 @@ function HomeUser() {
           </div>
           <div className="row-span-1 justify-self-end p-5">
             <Link to="question">
-              <img src="./foto/icona-freccia.png" className="h-20 w-20"></img>
+              <img
+                src="./foto/icona-freccia.png"
+                className="h-14 w-14 lg:h-24 lg:w-24"
+              ></img>
             </Link>
           </div>
         </div>

@@ -27,6 +27,7 @@ function AddUser() {
       mail: mail,
       password: password,
       role: role,
+      questions: [""],
     });
     // write our file
     await writableStream.write(new Blob([JSON.stringify(users)]));
@@ -89,12 +90,15 @@ function AddUser() {
             defaultValue={inputValue}
             className={classValue}
           ></input>
-          <input
+          <select
             id="role"
             placeholder="Role"
             defaultValue={inputValue}
             className={classValue}
-          ></input>
+          >
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
           <button
             onClick={addUser}
             className="bg-black m-12 p-6 px-12 col-span-2 rounded-lg text-white text-xl place-self-center xl:text-6xl font-bold"
