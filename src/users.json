@@ -1,4 +1,4 @@
 [
-    {"id": 0, "name": "admin", "password": "admin123", "mail": "admin@gmail.com", "role": "admin", "questions": [""]},
-    {"id": 1, "name": "matteo", "password": "matteo123", "mail": "matteo@gmail.com", "role": "user", "questions": [""]}
+    {"id": 0, "name": "admin", "password": "admin123", "mail": "admin@gmail.com", "role": "admin"},
+    {"id": 1, "name": "matteo", "password": "matteo123", "mail": "matteo@gmail.com", "role": "user"}
 ]

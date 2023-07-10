@@ -4,10 +4,4 @@ interface User {
     password: string;
     mail: string;
     role: string;
-    questions: array<string>
   }
-
-interface Question {
-  id: number,
-  question: string
-}

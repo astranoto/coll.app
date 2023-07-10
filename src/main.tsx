@@ -11,6 +11,8 @@ import Question from "./components/Question";
 import Profile from "./components/Profile";
 import Contributors from "./components/Contributors";
 import AddUser from "./components/AddUser";
+import Payments from "./components/AddPayments";
+import ShowPayment from "./components/ShowPayments";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +54,14 @@ const router = createBrowserRouter([
   {
     path: "home-user/profile",
     element: <Profile />,
+  },
+  {
+    path: "payments",
+    element: <Payments />,
+  },
+  {
+    path: "show-payments",
+    element: <ShowPayment />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

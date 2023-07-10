@@ -1,7 +1,8 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import users from "../users.json";
 import questions from "../questions.json";
+
 function Profile() {
   const [password, setPassword] = useState(passwordHider);
   const navigate = useNavigate();
@@ -38,7 +39,19 @@ function Profile() {
     writeQuestions(b);
     goBack();
   }
-  function buttonVisible() {
+  function buttonPaymentVisible() {
+    if (
+      localStorage.getItem("searchedAccount") !==
+      localStorage.getItem("loggedAccount")
+    ) {
+      return (
+        <div className="mx-11 mb-10 px-10 py-5 bg-black hover:bg-slate-800 text-white font-bold text-3xl text-center rounded-lg lg:text-5xl">
+          <Link to="/payments">Pagamenti</Link>
+        </div>
+      );
+    }
+  }
+  function buttonDeleteVisible() {
     if (
       localStorage.getItem("searchedAccount") ==
       localStorage.getItem("loggedAccount")
@@ -77,8 +90,6 @@ function Profile() {
     }
   }
   function passwordShower() {
-    const a = localStorage.getItem("searchedAccount");
-    const info: User = a ? JSON.parse(a) : null;
     return info.password;
   }
   function passwordHider() {
@@ -127,29 +138,42 @@ function Profile() {
           {info.name}
         </p>
       </div>
-      <div className="lg:col-span-1 lg:my-12 lg:mx-24 bg-[#f5f5f5] rounded-lg mx-12 my-12 ">
+      <div className="lg:col-span-1 lg:mx-24 bg-[#f5f5f5] rounded-lg mx-12 my-12 xl:grid xl:grid-cols-2 xl:place-items-center">
         <p className="py-10 lg:py-16 px-5 text-justify text-2xl lg:text-5xl">
-          <b>Mail:</b> <br></br>
+          <b className="text-6xl">Mail:</b> <br></br>
           {info.mail}
         </p>
         <div className="grid grid-cols-2 place-items-left">
           <p className="col-span-1 py-10 lg:py-16 px-5 text-justify text-2xl lg:text-5xl">
-            <b>Password:</b> <br></br>
+            <b className="text-6xl">Password:</b> <br></br>
             {password}
           </p>
           <button onClick={changeViewPassword}>
-            <img src="/foto/icona-occhio.png" className="h-16 w-16"></img>
+            <img
+              src="/foto/icona-occhio.png"
+              className="h-16 w-16 mx-24 mt-28"
+            ></img>
           </button>
         </div>
+        <Link
+          to="/show-payments"
+          className="bg-black text-white rounded-lg py-5 lg:py-8 px-5 text-justify text-2xl lg:text-5xl"
+        >
+          <b>vedi pagamenti</b>
+          <br></br>
+        </Link>
         <p className="py-10 lg:py-16 px-5 text-justify text-2xl lg:text-5xl">
-          <b>Ruolo:</b> <br></br>
-          {info.role}
-        </p>
-        <p className="py-10 lg:py-16 px-5 text-justify text-2xl lg:text-5xl">
-          <b>Domande:</b> <br></br>
+          <b className="text-6xl">Domande:</b> <br></br>
           {questionShower()}
         </p>
-        <div className="flex justify-center">{buttonVisible()};</div>
+        <li className="py-10 lg:py-16 px-5 text-justify text-2xl lg:text-5xl col-span-2">
+          <b className="text-6xl">Ruolo:</b> <br></br>
+          {info.role}
+        </li>
+        <div className="col-span-2 xl:grid xl:grid-cols-2">
+          <div className="flex justify-center">{buttonPaymentVisible()};</div>
+          <div className="flex justify-center">{buttonDeleteVisible()};</div>
+        </div>
       </div>
     </div>
   );

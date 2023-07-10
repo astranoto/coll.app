@@ -3,6 +3,7 @@ import UserTile from "./UserTile";
 import users from "../users.json";
 
 function Contributors() {
+  const loggedAccount = localStorage.getItem("loggedAccount");
   function goBack() {
     window.history.back();
   }
@@ -18,9 +19,7 @@ function Contributors() {
         </p>
         <div className="mx-24 grid grid-cols-1 gap-12 xl:gap-6 place-items-center lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-7">
           {users.map((user) => {
-            if (
-              JSON.stringify(user) !== localStorage.getItem("loggedAccount")
-            ) {
+            if (loggedAccount && user.id !== JSON.parse(loggedAccount).id) {
               return <UserTile user={user} />;
             }
           })}
