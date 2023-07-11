@@ -14,56 +14,61 @@ import AddUser from './components/AddUser';
 import Payments from './components/AddPayments';
 import ShowPayment from './components/ShowPayments';
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+	[
+		{
+			path: '/',
+			element: <SignIn />,
+		},
+		{
+			path: 'home-admin',
+			element: <HomeAdmin />,
+		},
+		{
+			path: 'home-user',
+			element: <HomeUser />,
+		},
+		{
+			path: 'home-admin/contributors',
+			element: <Contributors />,
+		},
+		{
+			path: 'home-user/projects',
+			element: <Projects />,
+		},
+		{
+			path: 'home-admin/add-user',
+			element: <AddUser />,
+		},
+		{
+			path: 'home-user/question',
+			element: <Question />,
+		},
+		{
+			path: 'home-admin/profile',
+			element: <Profile />,
+		},
+		{
+			path: 'home-admin/contributors/profile',
+			element: <Profile />,
+		},
+		{
+			path: 'home-user/profile',
+			element: <Profile />,
+		},
+		{
+			path: 'payments',
+			element: <Payments />,
+		},
+		{
+			path: 'show-payments',
+			element: <ShowPayment />,
+		},
+	],
 	{
-		path: '/',
-		element: <SignIn />,
-	},
-	{
-		path: 'home-admin',
-		element: <HomeAdmin />,
-	},
-	{
-		path: 'home-user',
-		element: <HomeUser />,
-	},
-	{
-		path: 'home-admin/contributors',
-		element: <Contributors />,
-	},
-	{
-		path: 'home-user/projects',
-		element: <Projects />,
-	},
-	{
-		path: 'home-admin/add-user',
-		element: <AddUser />,
-	},
-	{
-		path: 'home-user/question',
-		element: <Question />,
-	},
-	{
-		path: 'home-admin/profile',
-		element: <Profile />,
-	},
-	{
-		path: 'home-admin/contributors/profile',
-		element: <Profile />,
-	},
-	{
-		path: 'home-user/profile',
-		element: <Profile />,
-	},
-	{
-		path: 'payments',
-		element: <Payments />,
-	},
-	{
-		path: 'show-payments',
-		element: <ShowPayment />,
-	},
-]);
+		basename: '/coll.app/',
+	}
+);
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
 		<RouterProvider router={router} />
