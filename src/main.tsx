@@ -66,7 +66,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: "/coll.app",
+    basename: "/coll.app/",
   }
 );
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
