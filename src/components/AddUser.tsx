@@ -17,9 +17,7 @@ function AddUser() {
     role: string
   ) {
     const newHandle = await window.showSaveFilePicker();
-    // create a FileSystemWritableFileStream to write to
     const writableStream = await newHandle.createWritable();
-
     const id = users[users.length - 1].id + 1;
     users.push({
       id: id,
@@ -27,11 +25,8 @@ function AddUser() {
       mail: mail,
       password: password,
       role: role,
-      questions: [""],
     });
-    // write our file
     await writableStream.write(new Blob([JSON.stringify(users)]));
-    // close the file and write the contents to disk.
     await writableStream.close();
   }
   function addUser() {
@@ -71,7 +66,7 @@ function AddUser() {
         Chi è il nuovo collaboratore?
       </h1>
       <div className="h-screen">
-        <div className="bg-[#f5f5f5] m-24 h-3/5 rounded-xl grid grid-cols-1 grid-rows-5  xl:grid-rows-3 xl:grid-cols-2">
+        <div className="bg-[#f5f5f5] py-10 m-24 h-4/6 rounded-xl grid grid-cols-1 grid-rows-5 xl:grid-rows-3 xl:grid-cols-2">
           <input
             id="name"
             placeholder="Name"
@@ -101,7 +96,7 @@ function AddUser() {
           </select>
           <button
             onClick={addUser}
-            className="bg-black m-12 p-6 px-12 col-span-2 rounded-lg text-white text-xl place-self-center xl:text-6xl font-bold"
+            className="bg-black p-6 px-12 col-span-2 rounded-lg text-white text-xl place-self-center xl:text-6xl font-bold"
           >
             Aggiungi
           </button>

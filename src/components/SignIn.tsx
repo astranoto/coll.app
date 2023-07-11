@@ -13,13 +13,13 @@ function SignIn() {
   const [classValue, setClassValue] = useState(
     "rounded-lg h-12 w-2/3 p-3 lg:h-24 lg:text-2xl lg:mx-12 xl:mx-24"
   );
+  const navigate = useNavigate();
   function findUserByEmailAndPassword(mail: string, password: string) {
     const user = users.find(function (user) {
       return user.mail === mail && user.password === password;
     });
     return user || null;
   }
-  const navigate = useNavigate();
   function checkAccount() {
     const inputElement1 = document.getElementById("mail") as HTMLInputElement;
     const inputElement2 = document.getElementById("ps") as HTMLInputElement;
@@ -57,7 +57,6 @@ function SignIn() {
   async function handleClick() {
     navigate(checkAccount());
   }
-
   return (
     <div className="h-screen w-screen grid grid-rows-9 lg:grid-rows-1 lg:grid-cols-2">
       <div className="bg-black row-span-3 grid grid-rows-3 justify-center items-center lg:row-span-1 lg:col-span-1">
@@ -88,7 +87,7 @@ function SignIn() {
           </div>
           <button
             onClick={handleClick}
-            className=" row-span-1 flex justify-center bg-black my-16 text-white text-center items-center text-xl font-bold rounded-lg lg:h-48 lg:text-5xl lg:mt-24 lg:mx-24"
+            className=" row-span-1 flex justify-center bg-black my-16 mx-8 text-white text-center items-center text-xl font-bold rounded-lg lg:h-48 lg:text-5xl lg:mt-24 lg:mx-24"
           >
             Accedi
           </button>
@@ -101,5 +100,4 @@ function SignIn() {
     </div>
   );
 }
-
 export default SignIn;

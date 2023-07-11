@@ -24,6 +24,9 @@ function ShowPayment() {
               <b>Pagamento n.{n}</b>
             </li>
             <br></br>
+            <b>Note:</b> <br></br>
+            {userPayment.note}
+            <br></br>
             <b>Inizio: </b> <br></br>
             {userPayment.start}
             <br></br>

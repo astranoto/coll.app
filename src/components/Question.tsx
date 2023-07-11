@@ -40,7 +40,7 @@ function Question() {
           placeholder="scrivi"
           className="font-light m-10 p-6 rounded-lg lg:text-2xl col-span-6"
         ></input>
-        <button onClick={saveQuestion}>
+        <button className="" onClick={saveQuestion}>
           <img src="/foto/icona-send.png" className="h-15 lg:h-20"></img>
         </button>
       </div>

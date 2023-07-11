@@ -12,7 +12,7 @@ function HomeAdmin() {
         <br />
         Qui troverai tutto quello che ti serve
       </p>
-      <div className="lg:grid lg:grid-cols-2 my-8 h-3/5">
+      <div className="lg:grid lg:grid-cols-2 p-3 h-3/5">
         <div className="bg-[#f5f5f5] my-8 mx-16 hover:mx-8 grid grid-row-3 rounded-lg lg:h-full lg:col-span-1 lg:my-10 lg:hover:my-5">
           <div className="row-span-1 p-5">
             <img
@@ -37,7 +37,7 @@ function HomeAdmin() {
             </Link>
           </div>
         </div>
-        <div className="bg-[#f5f5f5] mx-16 hover:mx-8 grid grid-row-3 rounded-lg  lg:h-full lg:col-span-1 lg:my-10 lg:hover:my-5">
+        <div className="bg-[#f5f5f5] my-8 mx-16 hover:mx-8 grid grid-row-3 rounded-lg lg:h-full lg:col-span-1 lg:my-10 lg:hover:my-5">
           <div className="row-span-1 p-2">
             <img
               src="./foto/icona-plus.png"

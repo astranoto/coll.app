@@ -14,7 +14,7 @@ function Projects() {
         <p className="text-2xl font-bold text-center my-10 lg:text-4xl">
           Eccoti, lo stato economico dei progetti a cui partecipi
         </p>
-        <div className="bg-[#f5f5f5] rounded-lg h-5/6 mx-10 "></div>
+        <div className="bg-[#f5f5f5] rounded-lg h-4/6 mx-10 "></div>
       </div>
     </div>
   );

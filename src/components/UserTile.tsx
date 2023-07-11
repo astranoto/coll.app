@@ -17,7 +17,6 @@ function UserTile(props: Props) {
     ).length;
     setQuestionValue(nQuestions);
   }, [props.user.id]);
-
   function openProfile(account: User) {
     const user = JSON.stringify(account);
     localStorage.setItem("searchedAccount", user);
@@ -27,12 +26,6 @@ function UserTile(props: Props) {
     openProfile(props.user);
   }
   function questionNotification() {
-    // const nQuestions = questions.filter((question) => {
-    //   if (props.user.id == question.id) {
-    //     return question.question;
-    //   }
-    // }).length;
-    // setQuestionValue(nQuestions);
     if (questionValue > 0) {
       return (
         <div className="bg-black rounded-full p-2 text-4xl font-bold text-white text-center">

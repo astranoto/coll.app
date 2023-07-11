@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply px-5 py-5 bg-black hover:bg-slate-800 text-white font-bold text-2xl text-center rounded-lg lg:text-4xl;
+  }
+}

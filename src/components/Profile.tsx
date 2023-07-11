@@ -2,22 +2,18 @@ import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import users from "../users.json";
 import questions from "../questions.json";
+import payments from "../payments.json";
 
 function Profile() {
   const [password, setPassword] = useState(passwordHider);
   const navigate = useNavigate();
   const a = localStorage.getItem("searchedAccount");
   const info: User = a ? JSON.parse(a) : null;
-  function goBack() {
-    window.history.back();
-  }
+
   async function writeUsers(newUsers: Array<User>) {
     const newHandle = await window.showSaveFilePicker();
-    // create a FileSystemWritableFileStream to write to
     const writableStream = await newHandle.createWritable();
-    // write our file
     await writableStream.write(new Blob([JSON.stringify(newUsers)]));
-    // close the file and write the contents to disk.
     await writableStream.close();
   }
   async function writeQuestions(newQuestions: Array<Question>) {
@@ -26,30 +22,27 @@ function Profile() {
     await writableStream.write(new Blob([JSON.stringify(newQuestions)]));
     await writableStream.close();
   }
+  async function writePayments(newPayment: Array<Payment>) {
+    const newHandle = await window.showSaveFilePicker();
+    const writableStream = await newHandle.createWritable();
+    await writableStream.write(new Blob([JSON.stringify(newPayment)]));
+    await writableStream.close();
+  }
   function changeAccount() {
     localStorage.clear();
     navigate("/");
   }
   function deleteProfile() {
     let a: Array<User> = [];
-    let b: Array<Question>;
+    let b: Array<Question> = [];
+    let c: Array<Payment> = [];
     a = users.filter((user) => user.id !== info.id);
     b = questions.filter((question) => question.id !== info.id);
+    c = payments.filter((payment) => payment.id !== info.id);
     writeUsers(a);
     writeQuestions(b);
-    goBack();
-  }
-  function buttonPaymentVisible() {
-    if (
-      localStorage.getItem("searchedAccount") !==
-      localStorage.getItem("loggedAccount")
-    ) {
-      return (
-        <div className="mx-11 mb-10 px-10 py-5 bg-black hover:bg-slate-800 text-white font-bold text-3xl text-center rounded-lg lg:text-5xl">
-          <Link to="/payments">Pagamenti</Link>
-        </div>
-      );
-    }
+    writePayments(c);
+    window.history.back();
   }
   function buttonDeleteVisible() {
     if (
@@ -57,19 +50,13 @@ function Profile() {
       localStorage.getItem("loggedAccount")
     ) {
       return (
-        <button
-          className="mx-11 mb-5 px-10 py-5 bg-black hover:bg-slate-800 text-white font-bold text-3xl rounded-lg lg:text-5xl"
-          onClick={changeAccount}
-        >
+        <button className="mx-11 mb-5 btn-primary" onClick={changeAccount}>
           Esci
         </button>
       );
     } else {
       return (
-        <button
-          className="mx-11 mb-5 px-10 py-5 bg-black hover:bg-slate-800 text-white font-bold text-3xl rounded-lg lg:text-5xl"
-          onClick={deleteProfile}
-        >
+        <button className="mx-11 mb-5 btn-primary" onClick={deleteProfile}>
           Cancella profilo
         </button>
       );
@@ -109,70 +96,71 @@ function Profile() {
     }
   }
   return (
-    <div className="h-screen w-screen lg:grid lg:grid-cols-2">
+    <div className="h-auto w-auto lg:grid lg:grid-cols-2">
       <div className="lg:col-span-1">
         <div className="grid grid-cols-2">
           <button
-            onClick={goBack}
+            onClick={() => window.history.back()}
             className="col-span-1 justify-self-start m-5"
           >
             <img
               src="/foto/icona-back-nero.png"
-              className="h-10 w-10 m-10"
+              className="h-7 w-7 md:h-10 md:w-10 m-10"
             ></img>
           </button>
           <button className="justify-self-end">
             <img
               src="/foto/icona-impostazioni.png"
-              className="h-16 w-16 m-10"
+              className="h-7 w-7 md:h-16 md:w-16 m-10"
             ></img>
           </button>
         </div>
-        <div className="flex items-center justify-center lg:mt-80 lg:mb-24">
+        <div className="grid place-items-center">
           <img
             src="/foto/icona-foto-profilo.jpg"
-            className="rounded-full h-96"
+            className="rounded-full h-60 md:h-96"
           ></img>
         </div>
         <p className="pt-10 text-center font-bold text-5xl lg:text-9xl">
           {info.name}
         </p>
       </div>
-      <div className="lg:col-span-1 lg:mx-24 bg-[#f5f5f5] rounded-lg mx-12 my-12 xl:grid xl:grid-cols-2 xl:place-items-center">
-        <p className="py-10 lg:py-16 px-5 text-justify text-2xl lg:text-5xl">
-          <b className="text-6xl">Mail:</b> <br></br>
+      <div className="m-12 md:grid md:grid-cols-2 md:gap-y-10 rounded-lg bg-[#f5f5f5] lg:flex lg:flex-col lg:space-y-5 place-items-center lg:pt-12">
+        <p className="text-justify text-2xl lg:text-3xl">
+          <b className="text-3xl md:text-5xl">Mail:</b> <br></br>
           {info.mail}
         </p>
-        <div className="grid grid-cols-2 place-items-left">
-          <p className="col-span-1 py-10 lg:py-16 px-5 text-justify text-2xl lg:text-5xl">
-            <b className="text-6xl">Password:</b> <br></br>
+        <div className="flex space-x-5">
+          <p className="col-span-1 text-justify text-2xl lg:text-3xl">
+            <b className="text-3xl md:text-5xl">Password:</b> <br></br>
             {password}
           </p>
-          <button onClick={changeViewPassword}>
+          <button className="place-self-end" onClick={changeViewPassword}>
             <img
               src="/foto/icona-occhio.png"
-              className="h-16 w-16 mx-24 mt-28"
+              className="h-12 w-12 md:h-16 md:w-16"
             ></img>
           </button>
         </div>
-        <Link
-          to="/show-payments"
-          className="bg-black text-white rounded-lg py-5 lg:py-8 px-5 text-justify text-2xl lg:text-5xl"
-        >
-          <b>vedi pagamenti</b>
-          <br></br>
-        </Link>
-        <p className="py-10 lg:py-16 px-5 text-justify text-2xl lg:text-5xl">
-          <b className="text-6xl">Domande:</b> <br></br>
+        <p className="text-justify text-2xl lg:text-3xl">
+          <b className="text-3xl md:text-5xl">Domande:</b> <br></br>
           {questionShower()}
         </p>
-        <li className="py-10 lg:py-16 px-5 text-justify text-2xl lg:text-5xl col-span-2">
-          <b className="text-6xl">Ruolo:</b> <br></br>
+        <p className="text-2xl lg:text-3xl">
+          <b className="text-3xl md:text-5xl">Ruolo:</b> <br></br>
           {info.role}
-        </li>
-        <div className="col-span-2 xl:grid xl:grid-cols-2">
-          <div className="flex justify-center">{buttonPaymentVisible()};</div>
-          <div className="flex justify-center">{buttonDeleteVisible()};</div>
+        </p>
+        <div className="m-5 btn-primary w-max mx-auto">
+          <Link to="/show-payments">Vedi pagamenti</Link>
+        </div>
+        {localStorage.getItem("searchedAccount") !==
+          localStorage.getItem("loggedAccount") && (
+          <div className="m-5 btn-primary w-max mx-auto">
+            <Link to="/payments">Aggiungi Pagamenti</Link>
+          </div>
+        )}
+        <div className="grid md:col-span-2">
+          <div className="place-self-center">{buttonDeleteVisible()};</div>
         </div>
       </div>
     </div>
