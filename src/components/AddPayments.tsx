@@ -54,13 +54,13 @@ function Payments() {
       <button onClick={goBack} className="col-span-1 justify-self-start">
         <img src="/foto/icona-back-nero.png" className="h-10 w-10"></img>
       </button>
-      <div className="lg:grid lg:grid-cols-2 mb-8 h-3/5">
-        <div className="bg-[#f5f5f5] mx-8 rounded-lg lg:h-full lg:col-span-1 lg:my-10">
-          <p className="text-center text-5xl my-24">
-            <b>Pagamenti per periodi</b>
-          </p>
+      <p className="text-center text-5xl my-24">
+        <b>Pagamenti per periodi</b>
+      </p>
+      <div className="mb-8 h-3/5">
+        <div className="bg-[#f5f5f5] mx-8 rounded-lg h-full lg:col-span-1 lg:my-10">
           <div className="grid grid-cols-2 place-items-center">
-            <div className="col-span-2 grid grid-rows-2 my-8 text-2xl font-semibold w-max">
+            <div className="col-span-2 lg:col-span-1 grid grid-rows-2 my-8 text-2xl font-semibold w-max">
               <p className="text-center font-bold">Informazioni</p>
               <input id="info" className="rounded-lg p-5" type="text"></input>
             </div>
@@ -82,7 +82,7 @@ function Payments() {
                 type="date"
               ></input>
             </div>
-            <div className="col-span-2 grid grid-rows-2 my-8 text-2xl font-semibold">
+            <div className="col-span-2 lg:col-span-1 grid grid-rows-2 my-8 text-2xl font-semibold">
               <p className="text-center font-bold">Pagamento</p>
               <input
                 id="money"
@@ -98,7 +98,6 @@ function Payments() {
             Salva pagamento
           </button>
         </div>
-        <div className="bg-[#f5f5f5] my-8 lg:mx-16 mx-8 grid grid-row-3 rounded-lg  lg:h-full lg:col-span-1 lg:my-10"></div>
       </div>
     </div>
   );
