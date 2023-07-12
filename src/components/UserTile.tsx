@@ -42,7 +42,7 @@ function UserTile(props: Props) {
       <button onClick={handleClick} className="aspect-square h-80">
         <div className="grid grid-rows-2 place-items-center">
           <img
-            src="/foto/icona-foto-profilo.jpg"
+            src="foto/icona-foto-profilo.jpg"
             className="rounded-full h-24 w-24 row-span-1"
           ></img>
           <div className="row-span-1 p-5 text-left">

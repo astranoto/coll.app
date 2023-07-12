@@ -16,7 +16,7 @@ function HomeAdmin() {
         <div className="bg-[#f5f5f5] my-8 mx-16 hover:mx-8 grid grid-row-3 rounded-lg lg:h-full lg:col-span-1 lg:my-10 lg:hover:my-5">
           <div className="row-span-1 p-5">
             <img
-              src="./foto/icona-progetti.png"
+              src="foto/icona-progetti.png"
               className="h-14 w-14 lg:h-24 lg:w-24"
             ></img>
           </div>
@@ -31,7 +31,7 @@ function HomeAdmin() {
           <div className="row-span-1 justify-self-end p-5">
             <Link to="contributors">
               <img
-                src="./foto/icona-freccia.png"
+                src="foto/icona-freccia.png"
                 className="h-14 w-14 lg:h-24 lg:w-24"
               ></img>
             </Link>
@@ -40,7 +40,7 @@ function HomeAdmin() {
         <div className="bg-[#f5f5f5] my-8 mx-16 hover:mx-8 grid grid-row-3 rounded-lg lg:h-full lg:col-span-1 lg:my-10 lg:hover:my-5">
           <div className="row-span-1 p-2">
             <img
-              src="./foto/icona-plus.png"
+              src="foto/icona-plus.png"
               className="h-14 w-14 lg:h-24 lg:w-24"
             ></img>
           </div>
@@ -55,7 +55,7 @@ function HomeAdmin() {
           <div className="row-span-1 justify-self-end p-5">
             <Link to="add-user">
               <img
-                src="./foto/icona-freccia.png"
+                src="foto/icona-freccia.png"
                 className="h-14 w-14 lg:h-24 lg:w-24"
               ></img>
             </Link>
