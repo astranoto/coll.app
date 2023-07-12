@@ -52,7 +52,10 @@ function Payments() {
   return (
     <div className=" h-screen w-screen">
       <button onClick={goBack} className="col-span-1 justify-self-start">
-        <img src="foto/icona-back-nero.png" className="h-10 w-10"></img>
+        <img
+          src="/coll.app/foto/icona-back-nero.png"
+          className="h-10 w-10"
+        ></img>
       </button>
       <p className="text-center text-5xl my-24">
         <b>Pagamenti per periodi</b>

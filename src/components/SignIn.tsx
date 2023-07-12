@@ -61,7 +61,7 @@ function SignIn() {
     <div className="h-screen w-screen grid grid-rows-9 lg:grid-rows-1 lg:grid-cols-2">
       <div className="bg-black row-span-3 grid grid-rows-3 justify-center items-center lg:row-span-1 lg:col-span-1">
         <img
-          src="foto/logo_claim_white-27.png"
+          src="/coll.app/foto/logo_claim_white-27.png"
           className="row-span-2 h-auto w-auto"
         ></img>
         <h1 className="row-span-1 text-white text-left lg:text-center text-xl lg:text-4xl mx-16 lg:mb-48">

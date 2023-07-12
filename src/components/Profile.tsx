@@ -104,20 +104,20 @@ function Profile() {
             className="col-span-1 justify-self-start m-5"
           >
             <img
-              src="foto/icona-back-nero.png"
+              src="/coll.app/foto/icona-back-nero.png"
               className="h-7 w-7 md:h-10 md:w-10 m-10"
             ></img>
           </button>
           <button className="justify-self-end">
             <img
-              src="foto/icona-impostazioni.png"
+              src="/coll.app/foto/icona-impostazioni.png"
               className="h-7 w-7 md:h-16 md:w-16 m-10"
             ></img>
           </button>
         </div>
         <div className="grid place-items-center">
           <img
-            src="foto/icona-foto-profilo.jpg"
+            src="/coll.app/foto/icona-/coll.app/foto-profilo.jpg"
             className="rounded-full h-60 md:h-96"
           ></img>
         </div>
@@ -137,7 +137,7 @@ function Profile() {
           </p>
           <button className="place-self-end" onClick={changeViewPassword}>
             <img
-              src="foto/icona-occhio.png"
+              src="/coll.app/foto/icona-occhio.png"
               className="h-12 w-12 md:h-16 md:w-16"
             ></img>
           </button>

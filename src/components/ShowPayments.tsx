@@ -44,7 +44,10 @@ function ShowPayment() {
     <>
       <div className="grid-cols-2">
         <button onClick={goBack} className="col-span-1 justify-self-start m-5">
-          <img src="foto/icona-back-nero.png" className="h-10 w-10 m-10"></img>
+          <img
+            src="/coll.app/foto/icona-back-nero.png"
+            className="h-10 w-10 m-10"
+          ></img>
         </button>
         <h1 className="font-bold text-center text-7xl">
           Pagamenti di {info.name}

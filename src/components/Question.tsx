@@ -25,7 +25,10 @@ function Question() {
     <div className="h-screen w-screen place-items-center">
       <NavBar></NavBar>
       <button onClick={goBack}>
-        <img src="foto/icona-back-nero.png" className="h-10 w-10"></img>
+        <img
+          src="/coll.app/foto/icona-back-nero.png"
+          className="h-10 w-10"
+        ></img>
       </button>
       <h1 className="font-bold text-2xl text-center lg:text-4xl">
         Hai qualche domanda?
@@ -41,7 +44,10 @@ function Question() {
           className="font-light m-10 p-6 rounded-lg lg:text-2xl col-span-6"
         ></input>
         <button className="" onClick={saveQuestion}>
-          <img src="foto/icona-send.png" className="h-15 lg:h-20"></img>
+          <img
+            src="/coll.app/foto/icona-send.png"
+            className="h-15 lg:h-20"
+          ></img>
         </button>
       </div>
     </div>

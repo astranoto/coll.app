@@ -60,7 +60,10 @@ function AddUser() {
     <div>
       <NavBar />
       <button onClick={goBack}>
-        <img src="foto/icona-back-nero.png" className="h-10 w-10 m-5"></img>
+        <img
+          src="/coll.app/foto/icona-back-nero.png"
+          className="h-10 w-10 m-5"
+        ></img>
       </button>
       <h1 className="text-center font-bold text-4xl xl:text-6xl">
         Chi è il nuovo collaboratore?
