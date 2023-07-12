@@ -117,7 +117,7 @@ function Profile() {
         </div>
         <div className="grid place-items-center">
           <img
-            src="/coll.app/foto/icona-/coll.app/foto-profilo.jpg"
+            src="/coll.app/foto/icona-foto-profilo.jpg"
             className="rounded-full h-60 md:h-96"
           ></img>
         </div>
